@@ -19,8 +19,11 @@ app.use(routes);
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.urlMongoose || "mongodb://localhost/nytimes-react-scraping",
+console.log("the mongoose is " + process.env.urlMongoose);
+var tstConn =process.env.urlMongoose || "mongodb://localhost/nytimes-react-scraping";
+console.log(tstConn)
+mongoose.connect(process.env.urlMongoose || "mongodb://localhost/nytimes-react-scraping"  ,
+//mongoose.connect("mongodb://localhost/nytimes-react-scraping"  ,
   {
     useMongoClient: true
   }
