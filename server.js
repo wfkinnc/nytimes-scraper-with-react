@@ -5,6 +5,9 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// gets the .env file
+require('dotenv').config({path './config/.env'});
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -17,7 +20,7 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nytimes-react-scraping",
+  process.env.urlMongoose || "mongodb://localhost/nytimes-react-scraping",
   {
     useMongoClient: true
   }
