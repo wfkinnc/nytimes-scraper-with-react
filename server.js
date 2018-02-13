@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // gets the .env file
-require('dotenv').config({path './config/.env'});
+require('dotenv').config({path: './config/.env'});
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
